@@ -1,4 +1,3 @@
-// vytvoří loading screen dynamicky
 (function () {
   const loader = document.createElement("div");
   loader.id = "appLoader";
@@ -16,25 +15,52 @@
 
   document.body.appendChild(loader);
 
-  // fake loading progress
-  let progress = 0;
   const fill = loader.querySelector("#loaderFill");
 
-  const interval = setInterval(() => {
-    progress += Math.random() * 15;
+  let progress = 0;
+  let domLoaded = false;
+  let fullyLoaded = false;
+  let appReady = false;
 
-    if (progress >= 100) {
-      progress = 100;
-      fill.style.width = progress + "%";
+  // 📌 DOM loaded
+  document.addEventListener("DOMContentLoaded", () => {
+    domLoaded = true;
+  });
+
+  // 📌 všechny soubory (images, css…)
+  window.addEventListener("load", () => {
+    fullyLoaded = true;
+  });
+
+  // 📌 čekání na appku
+  function checkAppReady() {
+    if (window.appReady === true) {
+      appReady = true;
+    }
+  }
+
+  // 📊 PROGRESS LOOP
+  const interval = setInterval(() => {
+    checkAppReady();
+
+    // progres podle stavu
+    if (domLoaded) progress += 5;
+    if (fullyLoaded) progress += 10;
+    if (appReady) progress += 20;
+
+    // limit
+    if (progress > 100) progress = 100;
+
+    fill.style.width = progress + "%";
+
+    // hotovo
+    if (domLoaded && fullyLoaded && appReady && progress >= 100) {
+      clearInterval(interval);
 
       setTimeout(() => {
         loader.classList.add("hide");
         setTimeout(() => loader.remove(), 500);
-      }, 400);
-
-      clearInterval(interval);
-    } else {
-      fill.style.width = progress + "%";
+      }, 300);
     }
-  }, 200);
+  }, 100);
 })();
