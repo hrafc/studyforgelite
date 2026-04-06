@@ -666,6 +666,8 @@ function init() {
   ensureDailyReset();
   bindEvents();
   renderAll();
+
+  window.appReady = true;
 }
 
 function bindEvents() {
