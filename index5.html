@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StudyForge Lite</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-logo">SB</div>
+        <div>
+          <h1>StudyForge Lite</h1>
+          <p>Study like a boss 😎</p>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <button class="nav-btn active" data-section="dashboard">🏠 Dashboard</button>
+        <button class="nav-btn" data-section="subjects">📚 Předměty</button>
+        <button class="nav-btn" data-section="quiz">🧠 Quiz</button>
+        <button class="nav-btn" data-section="missions">🎯 Mise</button>
+        <button class="nav-btn" data-section="progress">🏆 Progress</button>
+        <button class="nav-btn" data-section="settings">⚙️ Nastavení</button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="mini-stat">
+          <span>Level</span>
+          <strong id="sidebarLevel">1</strong>
+        </div>
+        <div class="mini-stat">
+          <span>XP</span>
+          <strong id="sidebarXP">0</strong>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h2 id="pageTitle">Dashboard</h2>
+          <p id="topGreeting">Vítej zpět.</p>
+        </div>
+        <button id="quickStartBtn" class="primary-btn">Začít rychlý quiz</button>
+      </header>
+
+      <!-- DASHBOARD -->
+      <section class="section active" id="dashboard">
+        <div class="grid two">
+          <div class="card hero-card">
+            <div class="hero-head">
+              <div>
+                <p class="eyebrow">Vítej</p>
+                <h3 id="welcomeName">Player</h3>
+              </div>
+              <div class="level-badge">
+                <span>Level</span>
+                <strong id="dashboardLevel">1</strong>
+              </div>
+            </div>
+
+            <div class="xp-box">
+              <div class="xp-label-row">
+                <span>XP progress</span>
+                <span id="xpProgressText">0 / 100 XP</span>
+              </div>
+              <div class="progress-bar">
+                <div id="xpBar" class="progress-fill"></div>
+              </div>
+            </div>
+
+            <div class="hero-stats">
+              <div class="stat-box">
+                <span>🔥 Daily streak</span>
+                <strong id="dashboardStreak">0</strong>
+              </div>
+              <div class="stat-box">
+                <span>✅ Správně</span>
+                <strong id="dashboardCorrect">0</strong>
+              </div>
+              <div class="stat-box">
+                <span>❌ Špatně</span>
+                <strong id="dashboardWrong">0</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-head">
+              <h3>Dnešní mise</h3>
+              <button id="resetMissionsBtn" class="ghost-btn small-btn">Reset misí</button>
+            </div>
+            <div id="dashboardMissions" class="mission-list"></div>
+          </div>
+        </div>
+
+        <div class="grid three">
+          <div class="card">
+            <h3>Rychlý přehled</h3>
+            <div class="summary-list">
+              <div class="summary-item">
+                <span>Dokončené quizy</span>
+                <strong id="dashboardQuizzes">0</strong>
+              </div>
+              <div class="summary-item">
+                <span>Splněné mise</span>
+                <strong id="dashboardCompletedMissions">0</strong>
+              </div>
+              <div class="summary-item">
+                <span>Odznaky</span>
+                <strong id="dashboardBadges">0</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Nejlepší předmět</h3>
+            <p class="big-text" id="bestSubject">Zatím žádný</p>
+            <p class="muted">Po pár otázkách se tady ukáže, co ti jde nejlíp.</p>
+          </div>
+
+          <div class="card">
+            <h3>Doporučení</h3>
+            <p id="dashboardTip" class="muted">
+              Začni krátkým quizem a získej první XP.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SUBJECTS -->
+      <section class="section" id="subjects">
+        <div class="section-head">
+          <h3>Předměty</h3>
+          <p>Vyber si oblast a spusť quiz.</p>
+        </div>
+
+        <div class="subjects-grid">
+          <div class="subject-card">
+            <div class="subject-top">
+              <span class="subject-icon">➗</span>
+              <h4>Matematika</h4>
+            </div>
+            <p>Rovnice, procenta, mocniny, odmocniny a logické úlohy.</p>
+            <div class="subject-stats">
+              <span>Správně: <strong id="mathCorrect">0</strong></span>
+              <span>Špatně: <strong id="mathWrong">0</strong></span>
+            </div>
+            <button class="primary-btn subject-start" data-subject="math">Start</button>
+          </div>
+
+          <div class="subject-card">
+            <div class="subject-top">
+              <span class="subject-icon">🇬🇧</span>
+              <h4>Angličtina</h4>
+            </div>
+            <p>Časy, gramatika, porovnávání, modal verbs a slovní zásoba.</p>
+            <div class="subject-stats">
+              <span>Správně: <strong id="englishCorrect">0</strong></span>
+              <span>Špatně: <strong id="englishWrong">0</strong></span>
+            </div>
+            <button class="primary-btn subject-start" data-subject="english">Start</button>
+          </div>
+
+          <div class="subject-card">
+            <div class="subject-top">
+              <span class="subject-icon">🇨🇿</span>
+              <h4>Čeština</h4>
+            </div>
+            <p>Větné členy, pravopis, slovní druhy, souvětí a mluvnice.</p>
+            <div class="subject-stats">
+              <span>Správně: <strong id="czechCorrect">0</strong></span>
+              <span>Špatně: <strong id="czechWrong">0</strong></span>
+            </div>
+            <button class="primary-btn subject-start" data-subject="czech">Start</button>
+          </div>
+
+          <div class="subject-card">
+            <div class="subject-top">
+              <span class="subject-icon">✨</span>
+              <h4>Vlastní</h4>
+            </div>
+            <p>Mix otázek z přírodopisu, dějepisu, zeměpisu a fyziky.</p>
+            <div class="subject-stats">
+              <span>Správně: <strong id="customCorrect">0</strong></span>
+              <span>Špatně: <strong id="customWrong">0</strong></span>
+            </div>
+            <button class="primary-btn subject-start" data-subject="custom">Start</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUIZ -->
+      <section class="section" id="quiz">
+        <div class="section-head">
+          <h3>Quiz</h3>
+          <p id="quizSubtitle">Vyber si předmět a začni.</p>
+        </div>
+
+        <div class="grid two">
+          <div class="card quiz-card">
+            <div class="quiz-meta">
+              <span id="quizSubjectLabel">Předmět: —</span>
+              <span id="quizQuestionCounter">Otázka: 0 / 0</span>
+            </div>
+
+            <h3 id="quizQuestion">Klikni na některý předmět pro spuštění quizu.</h3>
+
+            <div id="answers" class="answers"></div>
+
+            <div class="quiz-actions">
+              <button id="nextQuestionBtn" class="ghost-btn" disabled>Další otázka</button>
+              <button id="stopQuizBtn" class="danger-btn">Ukončit quiz</button>
+            </div>
+
+            <div id="quizFeedback" class="quiz-feedback"></div>
+          </div>
+
+          <div class="card">
+            <h3>Aktuální quiz</h3>
+            <div class="summary-list">
+              <div class="summary-item">
+                <span>Správně v tomto quizu</span>
+                <strong id="currentQuizCorrect">0</strong>
+              </div>
+              <div class="summary-item">
+                <span>Špatně v tomto quizu</span>
+                <strong id="currentQuizWrong">0</strong>
+              </div>
+              <div class="summary-item">
+                <span>Získané XP</span>
+                <strong id="currentQuizXP">0</strong>
+              </div>
+            </div>
+            <p class="muted">
+              Správná odpověď = 10 XP. Za dokončení quizu dostaneš bonus 20 XP.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- MISSIONS -->
+      <section class="section" id="missions">
+        <div class="section-head">
+          <h3>Denní mise</h3>
+          <p>Mise se sledují automaticky.</p>
+        </div>
+
+        <div class="card">
+          <div id="missionsList" class="mission-list"></div>
+        </div>
+      </section>
+
+      <!-- PROGRESS -->
+      <section class="section" id="progress">
+        <div class="section-head">
+          <h3>Progress</h3>
+          <p>Přehled tvého výkonu.</p>
+        </div>
+
+        <div class="grid two">
+          <div class="card">
+            <h3>Statistiky</h3>
+            <div class="summary-list">
+              <div class="summary-item">
+                <span>Celkové XP</span>
+                <strong id="progressXP">0</strong>
+              </div>
+              <div class="summary-item">
+                <span>Level</span>
+                <strong id="progressLevel">1</strong>
+              </div>
+              <div class="summary-item">
+                <span>Daily streak</span>
+                <strong id="progressStreak">0</strong>
+              </div>
+              <div class="summary-item">
+                <span>Dokončené quizy</span>
+                <strong id="progressQuizzes">0</strong>
+              </div>
+              <div class="summary-item">
+                <span>Správné odpovědi</span>
+                <strong id="progressCorrect">0</strong>
+              </div>
+              <div class="summary-item">
+                <span>Špatné odpovědi</span>
+                <strong id="progressWrong">0</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Odznaky</h3>
+            <div id="badgesList" class="badges-list"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SETTINGS -->
+      <section class="section" id="settings">
+        <div class="section-head">
+          <h3>Nastavení</h3>
+          <p>Základní úpravy profilu a dat.</p>
+        </div>
+
+        <div class="grid two">
+          <div class="card">
+            <h3>Profil</h3>
+            <label class="field-label" for="usernameInput">Jméno</label>
+            <input id="usernameInput" class="text-input" type="text" placeholder="Tvoje jméno" />
+            <button id="saveNameBtn" class="primary-btn">Uložit jméno</button>
+          </div>
+
+          <div class="card">
+            <h3>Data</h3>
+            <p class="muted">Pozor: reset smaže uložený progress.</p>
+            <button id="resetDataBtn" class="danger-btn">Resetovat vše</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
