@@ -1,4 +1,4 @@
-const CACHE_NAME = "studyforgelite-v1.0.1";
+const CACHE_NAME = "studyforgelite-v1.1.2";
 
 const ASSETS = [
   "./",
