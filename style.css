@@ -642,7 +642,7 @@ input {
 .loader-icon {
   width: 120px;
   margin-bottom: 20px;
-  animation: breathe 2s ease-in-out infinite, rotateRight 4s linear infinite;
+  animation: breatheRotate 4s ease-in-out infinite;
 }
 
 .loader-bar {
@@ -668,14 +668,26 @@ input {
 
 /* 🔥 ANIMACE */
 
-@keyframes breathe {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.15); }
-}
+@keyframes breatheRotate {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
 
-@keyframes rotateRight {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  25% {
+    transform: scale(1.1) rotate(90deg);
+  }
+
+  50% {
+    transform: scale(1.15) rotate(180deg);
+  }
+
+  75% {
+    transform: scale(1.1) rotate(270deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
 }
 
 .loader-percent {
