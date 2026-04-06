@@ -677,3 +677,16 @@ input {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.loader-percent {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+#loadingText {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #9ca3af;
+  min-height: 18px;
+}
