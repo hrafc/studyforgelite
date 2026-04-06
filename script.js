@@ -678,7 +678,9 @@ function init() {
   bindEvents();
   renderAll();
 
-  window.appReady = true;
+  preloadQuestions().then(() => {
+    window.appReady = true;
+  });
 }
 
 function bindEvents() {
