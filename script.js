@@ -565,6 +565,17 @@ const questions = {
   ]
 };
 
+const preloadQuestions = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      Object.values(questions).forEach(arr => {
+        arr.length;
+      });
+      resolve();
+    }, 500);
+  });
+};
+
 const missionTemplates = [
   {
     id: "answer8",
