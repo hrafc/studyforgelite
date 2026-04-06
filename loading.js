@@ -7,60 +7,107 @@
       <img src="icon-512.png" class="loader-icon" />
       <h2>StudyForge Lite</h2>
 
+      <p id="loadingText">Inicializace...</p>
+
       <div class="loader-bar">
         <div class="loader-fill" id="loaderFill"></div>
       </div>
+
+      <div class="loader-percent" id="loaderPercent">0%</div>
     </div>
   `;
 
   document.body.appendChild(loader);
 
-  const fill = loader.querySelector("#loaderFill");
+  const fill = document.getElementById("loaderFill");
+  const percentText = document.getElementById("loaderPercent");
+  const loadingText = document.getElementById("loadingText");
 
   let progress = 0;
-  let domLoaded = false;
-  let fullyLoaded = false;
-  let appReady = false;
 
-  // 📌 DOM loaded
+  let states = {
+    dom: false,
+    assets: false,
+    data: false,
+    app: false
+  };
+
+  // 🔹 TEXTY (tipy)
+  const tips = [
+    "Načítám otázky...",
+    "Připravuju quiz...",
+    "Optimalizuji výkon...",
+    "Načítám data...",
+    "Inicializuji systém...",
+    "Téměř hotovo..."
+  ];
+
+  function randomTip() {
+    loadingText.textContent = tips[Math.floor(Math.random() * tips.length)];
+  }
+
+  setInterval(randomTip, 1200);
+
+  // 🔹 DOM
   document.addEventListener("DOMContentLoaded", () => {
-    domLoaded = true;
+    states.dom = true;
   });
 
-  // 📌 všechny soubory (images, css…)
+  // 🔹 ASSETS
   window.addEventListener("load", () => {
-    fullyLoaded = true;
+    states.assets = true;
   });
 
-  // 📌 čekání na appku
+  // 🔹 PRELOAD DAT (simulace + real feel)
+  function preloadData() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        states.data = true;
+        resolve();
+      }, 800); // 👈 zpomaleno
+    });
+  }
+
+  preloadData();
+
+  // 🔹 čekání na appku
   function checkAppReady() {
     if (window.appReady === true) {
-      appReady = true;
+      states.app = true;
     }
   }
 
-  // 📊 PROGRESS LOOP
+  // 🔥 PROGRESS ENGINE
   const interval = setInterval(() => {
     checkAppReady();
 
-    // progres podle stavu
-    if (domLoaded) progress += 5;
-    if (fullyLoaded) progress += 10;
-    if (appReady) progress += 20;
+    let target = 0;
 
-    // limit
+    if (states.dom) target += 25;
+    if (states.assets) target += 25;
+    if (states.data) target += 25;
+    if (states.app) target += 25;
+
+    // 🔥 SMOOTH PROGRESS (pomalejší)
+    if (progress < target) {
+      progress += Math.random() * 3 + 1; // zpomalení
+    }
+
     if (progress > 100) progress = 100;
 
     fill.style.width = progress + "%";
+    percentText.textContent = Math.floor(progress) + "%";
 
-    // hotovo
-    if (domLoaded && fullyLoaded && appReady && progress >= 100) {
+    // 🔥 FINISH
+    if (progress >= 100 && states.app) {
       clearInterval(interval);
+
+      loadingText.textContent = "Hotovo ✔";
 
       setTimeout(() => {
         loader.classList.add("hide");
         setTimeout(() => loader.remove(), 500);
-      }, 300);
+      }, 500);
     }
-  }, 100);
+  }, 80);
 })();
