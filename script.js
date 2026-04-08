@@ -869,6 +869,12 @@ function bindEvents() {
       nextQuestion();
     }
   });
+
+const bgThemeSelect = document.getElementById("bgThemeSelect");
+
+bgThemeSelect.addEventListener("change", (e) => {
+  applyTheme(e.target.value);
+});
   
 }
 
