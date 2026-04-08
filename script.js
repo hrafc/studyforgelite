@@ -21,7 +21,7 @@ const questions = {
     { id: "m17", question: "Desetinné číslo 0,375 odpovídá kolika procentům?", answers: ["3,75 %", "37,5 %", "375 %", "0,375 %"], correct: 1 },
     { id: "m18", question: "Kolik je (-3)²?", answers: ["-9", "6", "9", "-6"], correct: 2 },
     {id:"m19",question:"Vyřeš: 5x + 3 = 28",answers:["4","5","6","7"],correct:1},
-{id:"m20",question:"Vyřeš: 4x - 12 = 20",answers:["6","7","8","9"],correct:2},
+{id:"m20",question:"Vyřeš: 4x - 12 = 20",answerfs:["6","7","8","9"],correct:2},
 {id:"m21",question:"Kolik je 20 % z 350?",answers:["60","70","80","90"],correct:1},
 {id:"m22",question:"Kolik je 7²?",answers:["14","21","49","56"],correct:2},
 {id:"m23",question:"Kolik je √225?",answers:["12","13","14","15"],correct:3},
@@ -825,6 +825,12 @@ function init() {
   bindEvents();
   renderAll();
 
+  const savedTheme = localStorage.getItem("theme") || "auto";
+applyTheme(savedTheme);
+
+const select = document.getElementById("bgThemeSelect");
+if (select) select.value = savedTheme;
+
   preloadQuestions().then(() => {
     window.appReady = true;
   });
@@ -857,6 +863,13 @@ function bindEvents() {
     saveData();
     renderAll();
   });
+
+ document.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      nextQuestion();
+    }
+  });
+  
 }
 
 function showSection(sectionId) {
