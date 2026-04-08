@@ -949,6 +949,15 @@ function renderQuizQuestion() {
   }
 
   const q = currentQuestions[currentQuestionIndex];
+
+// 🔥 zamíchání odpovědí
+const shuffledAnswers = q.answers
+  .map((ans, i) => ({ text: ans, correct: i === q.correct }))
+  .sort(() => Math.random() - 0.5);
+
+// uložíme novou správnou odpověď
+q.shuffled = shuffledAnswers;
+q.correctIndex = shuffledAnswers.findIndex(a => a.correct);
   currentAnswered = false;
   nextQuestionBtn.disabled = true;
   quizFeedback.textContent = "";
@@ -959,10 +968,10 @@ function renderQuizQuestion() {
   quizQuestion.textContent = q.question;
   answersWrap.innerHTML = "";
 
-  q.answers.forEach((answer, index) => {
+  q.shuffled.forEach((answer, index) => {
     const btn = document.createElement("button");
     btn.className = "answer-btn";
-    btn.textContent = answer;
+    btn.textContent = answer.text;
     btn.addEventListener("click", () => selectAnswer(index));
     answersWrap.appendChild(btn);
   });
@@ -986,7 +995,7 @@ function selectAnswer(selectedIndex) {
       btn.classList.add("correct");
     }
 
-    if (index === selectedIndex && index !== q.correct) {
+    if (index === selectedIndex && index !== q.correctIndex) {
       btn.classList.add("wrong");
     }
   });
@@ -1005,7 +1014,7 @@ function selectAnswer(selectedIndex) {
 
     checkBadges();
   } else {
-    quizFeedback.textContent = `Špatně. Správná odpověď byla: ${q.answers[q.correct]}`;
+    quizFeedback.textContent = `Špatně. Správná odpověď byla: ${q.shuffled[q.correctIndex].text}`;
     quizFeedback.className = "quiz-feedback bad";
 
     appData.totalWrong += 1;
