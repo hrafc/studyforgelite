@@ -21,7 +21,7 @@ const questions = {
     { id: "m17", question: "Desetinné číslo 0,375 odpovídá kolika procentům?", answers: ["3,75 %", "37,5 %", "375 %", "0,375 %"], correct: 1 },
     { id: "m18", question: "Kolik je (-3)²?", answers: ["-9", "6", "9", "-6"], correct: 2 },
     {id:"m19",question:"Vyřeš: 5x + 3 = 28",answers:["4","5","6","7"],correct:1},
-{id:"m20",question:"Vyřeš: 4x - 12 = 20",answerfs:["6","7","8","9"],correct:2},
+{id:"m20",question:"Vyřeš: 4x - 12 = 20",answers:["6","7","8","9"],correct:2},
 {id:"m21",question:"Kolik je 20 % z 350?",answers:["60","70","80","90"],correct:1},
 {id:"m22",question:"Kolik je 7²?",answers:["14","21","49","56"],correct:2},
 {id:"m23",question:"Kolik je √225?",answers:["12","13","14","15"],correct:3},
@@ -1295,7 +1295,18 @@ function loadData() {
   }
 
   try {
-    return { ...defaultData(), ...JSON.parse(saved) };
+    const parsed = JSON.parse(saved);
+    const base = defaultData();
+
+    return {
+      ...base,
+      ...parsed,
+
+      // 🔥 deep merge
+      subjects: { ...base.subjects, ...parsed.subjects },
+      daily: { ...base.daily, ...parsed.daily },
+      usedQuestionIds: { ...base.usedQuestionIds, ...parsed.usedQuestionIds }
+    };
   } catch (error) {
     return defaultData();
   }
@@ -1392,4 +1403,9 @@ function applyTheme(theme) {
   if (theme === "turquoise") document.body.classList.add("theme-turquoise");
 
   localStorage.setItem("theme", theme);
+}
+
+function saveAndRender() {
+  saveData();
+  renderAll();
 }
