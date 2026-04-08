@@ -771,11 +771,12 @@ const defaultData = () => ({
   custom: []
 },
   subjects: {
-    math: { correct: 0, wrong: 0 },
-    english: { correct: 0, wrong: 0 },
-    czech: { correct: 0, wrong: 0 },
-    custom: { correct: 0, wrong: 0 }
-  },
+  math: { correct: 0, wrong: 0 },
+  english: { correct: 0, wrong: 0 },
+  czech: { correct: 0, wrong: 0 },
+  custom: { correct: 0, wrong: 0 },
+  german: { correct: 0, wrong: 0 }
+},
   daily: {
     date: getToday(),
     questionsAnswered: 0,
