@@ -1156,6 +1156,8 @@ function renderSubjects() {
 
   document.getElementById("customCorrect").textContent = appData.subjects.custom.correct;
   document.getElementById("customWrong").textContent = appData.subjects.custom.wrong;
+  document.getElementById("germanCorrect").textContent = appData.subjects.german.correct;
+  document.getElementById("germanWrong").textContent = appData.subjects.german.wrong;
 }
 
 function renderMissions() {
@@ -1249,6 +1251,7 @@ function getDashboardTip() {
 function getSubjectName(subject) {
   const names = {
     math: "Matematika",
+    german: "Němčina",
     english: "Angličtina",
     czech: "Čeština",
     custom: "Vlastní"
