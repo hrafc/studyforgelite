@@ -1360,3 +1360,17 @@ function shuffleArray(array) {
   }
   return array;
 }
+
+function applyTheme(theme) {
+  document.body.classList.remove(
+    "theme-dark",
+    "theme-light",
+    "theme-turquoise"
+  );
+
+  if (theme === "dark") document.body.classList.add("theme-dark");
+  if (theme === "light") document.body.classList.add("theme-light");
+  if (theme === "turquoise") document.body.classList.add("theme-turquoise");
+
+  localStorage.setItem("theme", theme);
+}
