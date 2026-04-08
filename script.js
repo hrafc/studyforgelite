@@ -131,6 +131,152 @@ const questions = {
 {id:"m118",question:"Kolik je 1/5 z 200?",answers:["20","30","40","50"],correct:2}
   ],
 
+  german: [
+
+{ id:"g1",question:"Jak se německy řekne 'ulice'?",answers:["die Straße","das Haus","der Park","die Schule"],correct:0},
+{ id:"g2",question:"Jak se německy řekne 'budova'?",answers:["das Gebäude","die Straße","der Park","die Schule"],correct:0},
+{ id:"g3",question:"Jak se německy řekne 'dům'?",answers:["das Haus","die Wohnung","die Schule","die Bank"],correct:0},
+{ id:"g4",question:"Jak se německy řekne 'byt'?",answers:["die Wohnung","das Haus","die Schule","das Kino"],correct:0},
+{ id:"g5",question:"Jak se německy řekne 'park'?",answers:["der Park","die Straße","die Schule","die Bank"],correct:0},
+{ id:"g6",question:"Jak se německy řekne 'hřiště'?",answers:["der Spielplatz","der Park","die Schule","das Kino"],correct:0},
+{ id:"g7",question:"Jak se německy řekne 'restaurace'?",answers:["das Restaurant","das Café","die Schule","die Bank"],correct:0},
+{ id:"g8",question:"Jak se německy řekne 'kavárna'?",answers:["das Café","das Restaurant","die Schule","die Bank"],correct:0},
+{ id:"g9",question:"Jak se německy řekne 'supermarket'?",answers:["der Supermarkt","die Bäckerei","die Schule","die Bank"],correct:0},
+{ id:"g10",question:"Jak se německy řekne 'pekárna'?",answers:["die Bäckerei","der Supermarkt","die Schule","das Kino"],correct:0},
+
+{ id:"g11",question:"Jak se německy řekne 'lékárna'?",answers:["die Apotheke","die Bank","die Schule","der Park"],correct:0},
+{ id:"g12",question:"Jak se německy řekne 'nemocnice'?",answers:["das Krankenhaus","die Schule","die Bank","der Park"],correct:0},
+{ id:"g13",question:"Jak se německy řekne 'škola'?",answers:["die Schule","das Kino","die Bank","der Park"],correct:0},
+{ id:"g14",question:"Jak se německy řekne 'univerzita'?",answers:["die Universität","die Schule","die Bank","der Park"],correct:0},
+{ id:"g15",question:"Jak se německy řekne 'nádraží'?",answers:["der Bahnhof","die Haltestelle","die Schule","der Park"],correct:0},
+{ id:"g16",question:"Jak se německy řekne 'zastávka'?",answers:["die Bushaltestelle","der Bahnhof","die Schule","der Park"],correct:0},
+{ id:"g17",question:"Jak se německy řekne 'policie'?",answers:["die Polizei","die Schule","die Bank","der Park"],correct:0},
+{ id:"g18",question:"Jak se německy řekne 'banka'?",answers:["die Bank","die Schule","der Park","das Kino"],correct:0},
+{ id:"g19",question:"Jak se německy řekne 'kino'?",answers:["das Kino","die Schule","die Bank","der Park"],correct:0},
+{ id:"g20",question:"Jak se německy řekne 'muzeum'?",answers:["das Museum","die Schule","die Bank","der Park"],correct:0},
+
+{ id:"g21",question:"Přelož: die Straße",answers:["ulice","park","dům","škola"],correct:0},
+{ id:"g22",question:"Přelož: das Gebäude",answers:["budova","dům","škola","banka"],correct:0},
+{ id:"g23",question:"Přelož: das Haus",answers:["dům","byt","škola","kino"],correct:0},
+{ id:"g24",question:"Přelož: die Wohnung",answers:["byt","dům","škola","kino"],correct:0},
+{ id:"g25",question:"Přelož: der Park",answers:["park","ulice","dům","škola"],correct:0},
+{ id:"g26",question:"Přelož: der Spielplatz",answers:["hřiště","park","škola","kino"],correct:0},
+{ id:"g27",question:"Přelož: das Restaurant",answers:["restaurace","kavárna","škola","banka"],correct:0},
+{ id:"g28",question:"Přelož: das Café",answers:["kavárna","restaurace","škola","banka"],correct:0},
+{ id:"g29",question:"Přelož: der Supermarkt",answers:["supermarket","pekárna","škola","banka"],correct:0},
+{ id:"g30",question:"Přelož: die Bäckerei",answers:["pekárna","supermarket","škola","kino"],correct:0},
+
+{ id:"g31",question:"Přelož: die Apotheke",answers:["lékárna","banka","škola","park"],correct:0},
+{ id:"g32",question:"Přelož: das Krankenhaus",answers:["nemocnice","škola","banka","park"],correct:0},
+{ id:"g33",question:"Přelož: die Schule",answers:["škola","kino","banka","park"],correct:0},
+{ id:"g34",question:"Přelož: die Universität",answers:["univerzita","škola","banka","park"],correct:0},
+{ id:"g35",question:"Přelož: der Bahnhof",answers:["nádraží","zastávka","škola","park"],correct:0},
+{ id:"g36",question:"Přelož: die Bushaltestelle",answers:["zastávka","nádraží","škola","park"],correct:0},
+{ id:"g37",question:"Přelož: die Polizei",answers:["policie","škola","banka","park"],correct:0},
+{ id:"g38",question:"Přelož: die Bank",answers:["banka","škola","park","kino"],correct:0},
+{ id:"g39",question:"Přelož: das Kino",answers:["kino","škola","banka","park"],correct:0},
+{ id:"g40",question:"Přelož: das Museum",answers:["muzeum","škola","banka","park"],correct:0},
+
+{ id:"g41",question:"Jak se řekne 'rovně'?",answers:["geradeaus","links","rechts","zurück"],correct:0},
+{ id:"g42",question:"Jak se řekne 'doleva'?",answers:["links","rechts","geradeaus","oben"],correct:0},
+{ id:"g43",question:"Jak se řekne 'doprava'?",answers:["rechts","links","unten","zurück"],correct:0},
+{ id:"g44",question:"Jak se řekne 'křižovatka'?",answers:["die Kreuzung","die Straße","der Park","der Weg"],correct:0},
+{ id:"g45",question:"Jak se řekne 'semafor'?",answers:["die Ampel","der Bus","der Bahnhof","die Bank"],correct:0},
+
+{ id:"g46",question:"Přelož: Jdi rovně.",answers:["Geh geradeaus.","Geh links.","Geh rechts.","Bleib hier."],correct:0},
+{ id:"g47",question:"Přelož: Zahni doprava.",answers:["Bieg rechts ab.","Bieg links ab.","Geh geradeaus.","Bleib hier."],correct:0},
+{ id:"g48",question:"Přelož: Zahni doleva.",answers:["Bieg links ab.","Bieg rechts ab.","Geh zurück.","Geh geradeaus."],correct:0},
+{ id:"g49",question:"Přelož: Kde je škola?",answers:["Wo ist die Schule?","Wo ist die Bank?","Wo ist das Kino?","Wo ist der Park?"],correct:0},
+{ id:"g50",question:"Přelož: Kde je banka?",answers:["Wo ist die Bank?","Wo ist die Schule?","Wo ist das Kino?","Wo ist der Park?"],correct:0},
+
+{ id:"g51",question:"Jak se německy řekne 'chodník'?",answers:["der Gehweg","die Straße","der Park","die Schule"],correct:0},
+{ id:"g52",question:"Jak se německy řekne 'stanice'?",answers:["die Station","der Bahnhof","die Schule","der Park"],correct:0},
+{ id:"g53",question:"Přelož: der Gehweg",answers:["chodník","ulice","park","škola"],correct:0},
+{ id:"g54",question:"Přelož: die Station",answers:["stanice","nádraží","škola","park"],correct:0},
+
+{ id:"g55",question:"Jak se řekne 'nastoupit'?",answers:["einsteigen","aussteigen","umsteigen","gehen"],correct:0},
+{ id:"g56",question:"Jak se řekne 'vystoupit'?",answers:["aussteigen","einsteigen","gehen","fahren"],correct:0},
+{ id:"g57",question:"Jak se řekne 'přestoupit'?",answers:["umsteigen","einsteigen","aussteigen","gehen"],correct:0},
+
+{ id:"g58",question:"Přelož: Geh nach links.",answers:["Jdi doleva.","Jdi doprava.","Jdi rovně.","Zůstaň."],correct:0},
+{ id:"g59",question:"Přelož: Geh nach rechts.",answers:["Jdi doprava.","Jdi doleva.","Jdi rovně.","Zůstaň."],correct:0},
+{ id:"g60",question:"Přelož: Geh geradeaus.",answers:["Jdi rovně.","Jdi doleva.","Jdi doprava.","Zastav."],correct:0},
+
+{ id:"g61",question:"Jak se řekne 'ulice je dlouhá'?",answers:["Die Straße ist lang.","Das Haus ist groß.","Die Schule ist klein.","Die Bank ist neu."],correct:0},
+{ id:"g62",question:"Jak se řekne 'dům je velký'?",answers:["Das Haus ist groß.","Die Straße ist lang.","Die Schule ist klein.","Das Kino ist alt."],correct:0},
+{ id:"g63",question:"Jak se řekne 'škola je malá'?",answers:["Die Schule ist klein.","Das Haus ist groß.","Die Bank ist groß.","Das Kino ist neu."],correct:0},
+
+{ id:"g64",question:"Vyber správně: 'bank' německy",answers:["die Bank","das Bank","der Bank","die Banken"],correct:0},
+{ id:"g65",question:"Vyber správně: 'kino' německy",answers:["das Kino","die Kino","der Kino","das Kinos"],correct:0},
+{ id:"g66",question:"Vyber správně: 'park' německy",answers:["der Park","die Park","das Park","der Parks"],correct:0},
+
+{ id:"g67",question:"Jak se zeptáš: 'Kde je nemocnice?'",answers:["Wo ist das Krankenhaus?","Wo ist die Schule?","Wo ist die Bank?","Wo ist das Kino?"],correct:0},
+{ id:"g68",question:"Jak se zeptáš: 'Kde je restaurace?'",answers:["Wo ist das Restaurant?","Wo ist das Café?","Wo ist die Schule?","Wo ist die Bank?"],correct:0},
+
+{ id:"g69",question:"Přelož: Ich gehe in die Schule.",answers:["Jdu do školy.","Jdu do banky.","Jdu do kina.","Jdu do parku."],correct:0},
+{ id:"g70",question:"Přelož: Ich gehe in den Park.",answers:["Jdu do parku.","Jdu do školy.","Jdu do banky.","Jdu do kina."],correct:0},
+
+{ id:"g71",question:"Co znamená 'links'?",answers:["doleva","doprava","rovně","zpět"],correct:0},
+{ id:"g72",question:"Co znamená 'rechts'?",answers:["doprava","doleva","rovně","zpět"],correct:0},
+
+{ id:"g73",question:"Jak se řekne 'zahni doleva'?",answers:["Bieg links ab.","Bieg rechts ab.","Geh geradeaus.","Bleib hier."],correct:0},
+{ id:"g74",question:"Jak se řekne 'zahni doprava'?",answers:["Bieg rechts ab.","Bieg links ab.","Geh zurück.","Bleib hier."],correct:0},
+
+{ id:"g75",question:"Přelož: die Ampel",answers:["semafor","autobus","vlak","stanice"],correct:0},
+{ id:"g76",question:"Přelož: der Bahnhof",answers:["nádraží","zastávka","škola","park"],correct:0},
+
+{ id:"g77",question:"Jak se řekne 'jděte rovně'?",answers:["Gehen Sie geradeaus.","Gehen Sie links.","Gehen Sie rechts.","Stoppen Sie."],correct:0},
+{ id:"g78",question:"Jak se řekne 'přejdi ulici'?",answers:["Überquere die Straße.","Geh links.","Geh rechts.","Bleib stehen."],correct:0},
+
+{ id:"g79",question:"Vyber správný člen: ___ Schule",answers:["die","der","das","den"],correct:0},
+{ id:"g80",question:"Vyber správný člen: ___ Kino",answers:["das","die","der","den"],correct:0},
+{ id:"g81",question:"Vyber správný člen: ___ Park",answers:["der","die","das","den"],correct:0},
+
+{ id:"g82",question:"Přelož: Ich bin in der Schule.",answers:["Jsem ve škole.","Jsem v parku.","Jsem v kině.","Jsem v bance."],correct:0},
+{ id:"g83",question:"Přelož: Ich bin im Park.",answers:["Jsem v parku.","Jsem ve škole.","Jsem v kině.","Jsem v bance."],correct:0},
+
+{ id:"g84",question:"Jak se řekne 'město'?",answers:["die Stadt","das Dorf","der Park","die Straße"],correct:0},
+{ id:"g85",question:"Jak se řekne 'vesnice'?",answers:["das Dorf","die Stadt","der Park","die Straße"],correct:0},
+
+{ id:"g86",question:"Přelož: die Stadt",answers:["město","vesnice","park","ulice"],correct:0},
+{ id:"g87",question:"Přelož: das Dorf",answers:["vesnice","město","park","ulice"],correct:0},
+
+{ id:"g88",question:"Jak se řekne 'blízko'?",answers:["nah","weit","links","rechts"],correct:0},
+{ id:"g89",question:"Jak se řekne 'daleko'?",answers:["weit","nah","links","rechts"],correct:0},
+
+{ id:"g90",question:"Přelož: Es ist nah.",answers:["Je to blízko.","Je to daleko.","Je to vlevo.","Je to vpravo."],correct:0},
+{ id:"g91",question:"Přelož: Es ist weit.",answers:["Je to daleko.","Je to blízko.","Je to vlevo.","Je to vpravo."],correct:0},
+
+{ id:"g92",question:"Jak se řekne 'za rohem'?",answers:["um die Ecke","auf der Straße","im Park","in der Schule"],correct:0},
+{ id:"g93",question:"Přelož: um die Ecke",answers:["za rohem","na ulici","v parku","ve škole"],correct:0},
+
+{ id:"g94",question:"Jak se řekne 'na ulici'?",answers:["auf der Straße","im Park","in der Schule","bei der Bank"],correct:0},
+{ id:"g95",question:"Přelož: auf der Straße",answers:["na ulici","v parku","ve škole","v bance"],correct:0},
+
+{ id:"g96",question:"Jak se řekne 'v parku'?",answers:["im Park","auf der Straße","in der Schule","bei der Bank"],correct:0},
+{ id:"g97",question:"Přelož: im Park",answers:["v parku","na ulici","ve škole","v bance"],correct:0},
+
+{ id:"g98",question:"Jak se řekne 've škole'?",answers:["in der Schule","im Park","auf der Straße","bei der Bank"],correct:0},
+{ id:"g99",question:"Přelož: in der Schule",answers:["ve škole","v parku","na ulici","v bance"],correct:0},
+
+{ id:"g100",question:"Jak se řekne 'v bance'?",answers:["bei der Bank","in der Schule","im Park","auf der Straße"],correct:0},
+
+{ id:"g101",question:"Přelož: bei der Bank",answers:["v bance","ve škole","v parku","na ulici"],correct:0},
+{ id:"g102",question:"Jak se řekne 'kde?'?",answers:["wo","wann","wer","was"],correct:0},
+{ id:"g103",question:"Jak se řekne 'kdy?'?",answers:["wann","wo","wer","was"],correct:0},
+{ id:"g104",question:"Jak se řekne 'kdo?'?",answers:["wer","wo","wann","was"],correct:0},
+{ id:"g105",question:"Jak se řekne 'co?'?",answers:["was","wo","wann","wer"],correct:0},
+
+{ id:"g106",question:"Přelož: Wo bist du?",answers:["Kde jsi?","Kdy jsi?","Kdo jsi?","Co jsi?"],correct:0},
+{ id:"g107",question:"Přelož: Was ist das?",answers:["Co to je?","Kde to je?","Kdy to je?","Kdo to je?"],correct:0},
+
+{ id:"g108",question:"Jak se řekne 'Jsem doma'?",answers:["Ich bin zu Hause.","Ich bin in der Schule.","Ich bin im Park.","Ich bin in der Bank."],correct:0},
+{ id:"g109",question:"Jak se řekne 'Jdu domů'?",answers:["Ich gehe nach Hause.","Ich gehe in die Schule.","Ich gehe in den Park.","Ich gehe zur Bank."],correct:0},
+
+{ id:"g110",question:"Přelož: Ich gehe nach Hause.",answers:["Jdu domů.","Jdu do školy.","Jdu do parku.","Jdu do banky."],correct:0}
+    
+],
+
   english: [
     { id: "e1", question: "Doplň: She ___ to school every day.", answers: ["go", "goes", "going", "gone"], correct: 1 },
     { id: "e2", question: "Doplň: Yesterday we ___ football.", answers: ["play", "played", "plays", "playing"], correct: 1 },
