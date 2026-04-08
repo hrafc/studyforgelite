@@ -991,7 +991,7 @@ function selectAnswer(selectedIndex) {
   buttons.forEach((btn, index) => {
     btn.disabled = true;
 
-    if (index === q.correct) {
+    if (index === q.correctIndex) {
       btn.classList.add("correct");
     }
 
@@ -1000,7 +1000,7 @@ function selectAnswer(selectedIndex) {
     }
   });
 
-  if (selectedIndex === q.correct) {
+ if (selectedIndex === q.correctIndex) {
     quizFeedback.textContent = "Správně! +10 XP";
     quizFeedback.className = "quiz-feedback good";
 
